@@ -593,6 +593,9 @@ function main() {
   };
 
   const outPath = path.join(__dirname, '..', 'data', 'dataset.json');
+  // Skapa data/-mappen om den inte finns (kan saknas vid fresh deploy
+  // eftersom `data/` är gitignorerad och därför inte i repot).
+  fs.mkdirSync(path.dirname(outPath), { recursive: true });
   fs.writeFileSync(outPath, JSON.stringify(dataset, null, 2));
 
   console.log('\nKlart:');
