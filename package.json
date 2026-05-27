@@ -5,10 +5,14 @@
   "description": "Community-sajt för äldre",
   "type": "commonjs",
   "scripts": {
+    "prestart": "npm run build-dataset && npm run seed",
     "start": "node server/server.js",
     "dev": "node server/server.js",
     "seed": "node server/seed.js",
     "build-dataset": "node scripts/generate-synthetic-dataset.js"
+  },
+  "engines": {
+    "node": ">=20"
   },
   "dependencies": {
     "better-sqlite3": "^12.9.0",
