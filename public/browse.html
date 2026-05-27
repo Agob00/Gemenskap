@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="app.brand">Gemenskap</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <script src="/js/font-size.js"></script>
+  <script src="/js/i18n.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/user-storage.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/components.js"></script>
+
+  <main class="container">
+    <div class="section-header">
+      <span class="section-icon" aria-hidden="true">&#128101;</span>
+      <h1 data-i18n="browse.title"></h1>
+    </div>
+    <p class="sub-header" data-i18n="browse.subtitle"></p>
+    <div id="alert"></div>
+
+    <div class="card filter-card" id="filter-card">
+      <div class="filter-row">
+        <div class="field">
+          <label for="filter-search" data-i18n="browse.filter_search_label"></label>
+          <input id="filter-search" type="text" data-i18n-placeholder="browse.filter_search_placeholder" autocomplete="off" />
+        </div>
+      </div>
+      <div class="filter-row filter-row-double">
+        <div class="field">
+          <label for="filter-city" data-i18n="browse.filter_city_label"></label>
+          <select id="filter-city">
+            <option value="" data-i18n="browse.filter_city_any"></option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="filter-interest" data-i18n="browse.filter_interest_label"></label>
+          <select id="filter-interest">
+            <option value="" data-i18n="browse.filter_interest_any"></option>
+          </select>
+        </div>
+      </div>
+      <div class="filter-row filter-toggles">
+        <label class="filter-toggle">
+          <input type="checkbox" id="filter-near">
+          <span data-i18n="browse.filter_near_me"></span>
+        </label>
+        <label class="filter-toggle">
+          <input type="checkbox" id="filter-available">
+          <span data-i18n="browse.filter_available"></span>
+        </label>
+        <button type="button" class="btn btn-quiet btn-clear-filters" id="filter-clear" data-i18n="browse.filter_clear"></button>
+      </div>
+      <p class="filter-result-count muted" id="filter-result-count"></p>
+    </div>
+
+    <div id="communities-list" class="list-stack"></div>
+  </main>
+
+  <script src="/js/page/browse.js"></script>
+</body>
+</html>

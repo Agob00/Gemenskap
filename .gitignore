@@ -1,0 +1,89 @@
+# ─────────────────────────────────────────────────────────
+# Node / npm
+# ─────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm/
+
+# Bundlad Node-runtime (OS-specifik, ca 18 MB — varje utvecklare
+# installerar Node själv).
+tools/
+
+# ─────────────────────────────────────────────────────────
+# Genererade dataartefakter
+# ─────────────────────────────────────────────────────────
+# SQLite-databasen och dess journal-filer skapas av `npm run seed`.
+data/app.db
+data/app.db-shm
+data/app.db-wal
+data/app.db-journal
+
+# Det syntetiska datasetet genereras av `npm run build-dataset`
+# (deterministiskt; samma seed ger samma fil). Den som klonar repot
+# kör `npm run build-dataset && npm run seed`.
+data/dataset.json
+
+# Gamla artefakter från före DBSCAN-omskrivningen.
+data/meetup_raw/
+data/model.json
+
+# ─────────────────────────────────────────────────────────
+# Användaruppladdade filer (avatarer)
+# ─────────────────────────────────────────────────────────
+# Behåll mappen i repot via .gitkeep, ignorera bara innehållet.
+public/uploads/*
+!public/uploads/.gitkeep
+
+# ─────────────────────────────────────────────────────────
+# Genererade dokument-artefakter
+# ─────────────────────────────────────────────────────────
+# Bygg-skripten i docs/ skapar PDF + figurer från koden. Behåll
+# källskripten i versionskontroll men inte deras output (kan
+# regenereras med `python docs/build_ml_pdf.py`).
+docs/figures/
+docs/ml-forklaring.pdf
+docs/ml-forklaring.ipynb
+
+# Python-cache om någon kör skripten lokalt.
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ─────────────────────────────────────────────────────────
+# Hemligheter och lokala konfigurationer
+# ─────────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+cookies.txt
+
+# ─────────────────────────────────────────────────────────
+# IDE och editor-filer
+# ─────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Claude Code session-data och plan-filer som hör till Claude-mappen
+# (de delas inte mellan utvecklare).
+.claude/
+
+# ─────────────────────────────────────────────────────────
+# OS-junk
+# ─────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# ─────────────────────────────────────────────────────────
+# Loggar och tillfälliga filer
+# ─────────────────────────────────────────────────────────
+*.log
+*.tmp
+*.bak

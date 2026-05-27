@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="app.brand">Gemenskap</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <script src="/js/font-size.js"></script>
+  <script src="/js/i18n.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/user-storage.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/components.js"></script>
+  <script src="/js/interests.js"></script>
+
+  <main class="container">
+    <ol class="steps" aria-label="Steg">
+      <li class="step done" data-i18n="login.step_indicator_1"></li>
+      <li class="step done" data-i18n="login.step_indicator_2"></li>
+      <li class="step active" data-i18n="login.step_indicator_3"></li>
+    </ol>
+
+    <h1 data-i18n="onboarding.title"></h1>
+    <p class="muted" data-i18n="onboarding.subtitle"></p>
+
+    <div id="alert"></div>
+
+    <section id="profile-step" class="card">
+      <div class="field">
+        <label for="name" data-i18n="onboarding.name_label"></label>
+        <span class="field-help" data-i18n="onboarding.name_help"></span>
+        <input id="name" type="text" maxlength="60" autocomplete="given-name" />
+      </div>
+      <div class="field">
+        <label for="city" data-i18n="onboarding.city_label"></label>
+        <span class="field-help" data-i18n="onboarding.city_help"></span>
+        <div class="city-row">
+          <input id="city" type="text" maxlength="60" list="city-suggestions" autocomplete="address-level2" />
+          <button type="button" class="btn btn-secondary city-locate-btn" id="locate-btn">
+            <span class="locate-icon" aria-hidden="true">&#9737;</span>
+            <span data-i18n="onboarding.detect_location"></span>
+          </button>
+        </div>
+        <div id="location-status" class="field-help" hidden></div>
+        <datalist id="city-suggestions">
+          <option value="Stockholm"></option>
+          <option value="Göteborg"></option>
+          <option value="Malmö"></option>
+          <option value="Uppsala"></option>
+          <option value="Västerås"></option>
+          <option value="Örebro"></option>
+          <option value="Linköping"></option>
+          <option value="Helsingborg"></option>
+          <option value="Norrköping"></option>
+        </datalist>
+      </div>
+      <div class="field">
+        <label data-i18n="onboarding.interests_label"></label>
+        <span class="field-help" data-i18n="onboarding.interests_help"></span>
+        <div id="interests"></div>
+      </div>
+      <div class="btn-row">
+        <button type="button" class="btn" id="save-profile-btn" data-i18n="common.continue"></button>
+      </div>
+    </section>
+
+    <section id="assigning-step" class="card" hidden>
+      <div class="assigning-state">
+        <div class="assigning-spinner" aria-hidden="true"></div>
+        <h2 data-i18n="onboarding.assigning_title"></h2>
+        <p class="muted" data-i18n="onboarding.assigning_help"></p>
+      </div>
+    </section>
+
+    <section id="no-match-step" class="card" hidden>
+      <h2 data-i18n="onboarding.no_match_title"></h2>
+      <p class="muted" data-i18n="onboarding.no_match_help"></p>
+      <div class="btn-row">
+        <button type="button" class="btn btn-secondary" id="back-to-interests-btn" data-i18n="onboarding.back_to_interests"></button>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/page/onboarding.js"></script>
+</body>
+</html>

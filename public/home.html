@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="app.brand">Gemenskap</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <script src="/js/font-size.js"></script>
+  <script src="/js/i18n.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/user-storage.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/components.js"></script>
+  <script src="/js/tutorial.js"></script>
+  <script src="/js/tips.js"></script>
+
+  <main class="container">
+    <div id="welcome-banner"></div>
+
+    <section id="next-event-card"></section>
+
+    <div class="section-header">
+      <span class="section-icon" aria-hidden="true">&#128172;</span>
+      <h2 data-i18n="home.recent_posts"></h2>
+    </div>
+    <div id="recent-posts" class="list-stack"></div>
+
+    <hr class="divider">
+    <div class="btn-row">
+      <a href="/browse.html" class="btn btn-secondary" data-i18n="browse.button"></a>
+    </div>
+
+    <hr class="divider">
+    <section class="about-section" aria-labelledby="about-heading">
+      <div class="section-header">
+        <span class="section-icon" aria-hidden="true">&#127793;</span>
+        <h2 id="about-heading" data-i18n="about.title"></h2>
+      </div>
+      <div class="card card-warm">
+        <p data-i18n="about.lead"></p>
+        <h3 data-i18n="about.why_title"></h3>
+        <p data-i18n="about.why_body"></p>
+        <h3 data-i18n="about.how_title"></h3>
+        <ul class="about-list">
+          <li data-i18n="about.how_item_1"></li>
+          <li data-i18n="about.how_item_2"></li>
+          <li data-i18n="about.how_item_3"></li>
+          <li data-i18n="about.how_item_4"></li>
+        </ul>
+        <h3 data-i18n="about.values_title"></h3>
+        <p data-i18n="about.values_body"></p>
+        <p class="about-signoff" data-i18n="about.signoff"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/page/home.js"></script>
+</body>
+</html>

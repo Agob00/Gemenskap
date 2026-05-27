@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="app.brand">Gemenskap</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <script src="/js/font-size.js"></script>
+  <script src="/js/i18n.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/user-storage.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/components.js"></script>
+  <script src="/js/tips.js"></script>
+
+  <main class="container">
+    <div class="community-switcher" id="community-switcher" hidden>
+      <span class="community-switcher-label" data-i18n="community.switcher_label"></span>
+      <div class="community-switcher-chips" id="community-switcher-chips"></div>
+    </div>
+
+    <div class="community-header">
+      <h1 id="community-name"></h1>
+      <p class="community-meta" id="community-meta"></p>
+    </div>
+
+    <div id="just-switched-banner" class="banner banner-success" hidden role="status" aria-live="polite"></div>
+    <div id="city-mismatch-banner" class="banner banner-info" hidden></div>
+    <div id="interests-mismatch-banner" class="banner banner-warn" hidden></div>
+    <div id="join-banner"></div>
+    <div id="alert"></div>
+
+    <div class="tab-row" role="tablist">
+      <button type="button" role="tab" data-tab="posts" aria-selected="true" data-i18n="community.tab_posts"></button>
+      <button type="button" role="tab" data-tab="members" aria-selected="false" data-i18n="community.tab_members"></button>
+      <button type="button" role="tab" data-tab="events" aria-selected="false" data-i18n="community.tab_events"></button>
+    </div>
+
+    <section id="tab-posts">
+      <div class="card" id="write-card" hidden>
+        <div class="field">
+          <label for="post-body" data-i18n="community.write_post_label"></label>
+          <span class="field-help" data-i18n="community.write_post_help"></span>
+          <textarea id="post-body" maxlength="4000"></textarea>
+        </div>
+        <div class="btn-row">
+          <button type="button" class="btn" id="post-btn" data-i18n="community.post_button"></button>
+        </div>
+      </div>
+      <div id="posts" class="list-stack"></div>
+    </section>
+
+    <section id="tab-members" hidden>
+      <div id="members" class="list-stack"></div>
+    </section>
+
+    <section id="tab-events" hidden>
+      <div id="community-events" class="list-stack"></div>
+      <div class="card" id="create-event-card" hidden style="margin-top:24px;">
+        <h2 data-i18n="events.create_title"></h2>
+        <div class="field">
+          <label for="ev-title" data-i18n="events.event_title"></label>
+          <input id="ev-title" type="text" maxlength="100" />
+        </div>
+        <div class="field">
+          <label for="ev-date" data-i18n="events.event_date"></label>
+          <input id="ev-date" type="datetime-local" />
+        </div>
+        <div class="field">
+          <label for="ev-location" data-i18n="events.event_location"></label>
+          <span class="field-help" data-i18n="events.event_location_help"></span>
+          <input id="ev-location" type="text" maxlength="100" />
+        </div>
+        <div class="field">
+          <label for="ev-address" data-i18n="events.event_address"></label>
+          <span class="field-help" data-i18n="events.event_address_help"></span>
+          <input id="ev-address" type="text" maxlength="200" />
+        </div>
+        <div class="field">
+          <label for="ev-desc" data-i18n="events.event_description"></label>
+          <textarea id="ev-desc" maxlength="2000"></textarea>
+        </div>
+        <div class="btn-row">
+          <button type="button" class="btn" id="ev-create-btn" data-i18n="events.create_button"></button>
+        </div>
+      </div>
+    </section>
+
+    <div id="leave-section" hidden>
+      <hr class="divider">
+      <div class="btn-row">
+        <button type="button" class="btn btn-quiet" id="leave-btn" data-i18n="community.leave"></button>
+      </div>
+    </div>
+
+    <hr class="divider">
+    <div class="btn-row">
+      <a href="/browse.html" class="btn btn-secondary" data-i18n="browse.button"></a>
+    </div>
+  </main>
+
+  <script src="/js/page/community.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "gemenskap",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Community-sajt för äldre",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node server/server.js",
+    "seed": "node server/seed.js",
+    "build-dataset": "node scripts/generate-synthetic-dataset.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.9.0",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.21.0"
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="app.brand">Gemenskap</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <script src="/js/font-size.js"></script>
+  <script src="/js/i18n.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/user-storage.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/components.js"></script>
+
+  <main class="container">
+    <ol class="steps" id="steps" aria-label="Steg">
+      <li class="step active" id="step1" data-i18n="login.step_indicator_1"></li>
+      <li class="step" id="step2" data-i18n="login.step_indicator_2"></li>
+      <li class="step" id="step3" data-i18n="login.step_indicator_3"></li>
+    </ol>
+
+    <div id="alert"></div>
+
+    <section id="phone-section" class="card">
+      <h1 data-i18n="login.step1.title"></h1>
+      <p class="muted" data-i18n="login.step1.help"></p>
+      <div class="field">
+        <label for="phone" data-i18n="login.phone_label"></label>
+        <input id="phone" type="tel" autocomplete="tel" data-i18n-placeholder="login.phone_placeholder" />
+      </div>
+      <div class="btn-row">
+        <button type="button" class="btn" id="send-code-btn" data-i18n="login.send_code"></button>
+      </div>
+    </section>
+
+    <section id="code-section" class="card" hidden>
+      <h1 data-i18n="login.step2.title"></h1>
+      <p class="muted" data-i18n="login.step2.help"></p>
+      <div class="field">
+        <label for="code" data-i18n="login.code_label"></label>
+        <input id="code" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="6" autocomplete="one-time-code" />
+      </div>
+      <div class="btn-row">
+        <button type="button" class="btn" id="verify-btn" data-i18n="login.verify"></button>
+        <button type="button" class="btn btn-secondary" id="resend-btn" disabled></button>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/page/login.js"></script>
+</body>
+</html>

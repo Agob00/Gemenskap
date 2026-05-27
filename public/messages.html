@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="app.brand">Gemenskap</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <script src="/js/font-size.js"></script>
+  <script src="/js/i18n.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/user-storage.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/components.js"></script>
+  <script src="/js/tips.js"></script>
+
+  <main class="container">
+    <div class="section-header">
+      <span class="section-icon" aria-hidden="true">&#128172;</span>
+      <h1 data-i18n="messages.title"></h1>
+    </div>
+    <div id="alert"></div>
+
+    <section id="threads-view">
+      <div class="btn-row" style="margin-bottom:18px;">
+        <button type="button" class="btn" id="start-new-btn" data-i18n="messages.start_new"></button>
+      </div>
+      <div id="threads-list"></div>
+    </section>
+
+    <section id="pick-member-view" hidden>
+      <button type="button" class="btn btn-quiet" id="pick-back-btn" style="width:auto;padding:8px 18px;margin-bottom:16px;font-size:var(--font-sm);" data-i18n="common.back"></button>
+      <h2 data-i18n="messages.pick_member_title"></h2>
+      <p class="muted" data-i18n="messages.pick_member_help"></p>
+      <label for="pick-member-search" class="sr-only" data-i18n="messages.search_member_label"></label>
+      <div class="search-field" style="margin-bottom:12px;">
+        <span class="search-icon" aria-hidden="true">&#128269;</span>
+        <input type="search" id="pick-member-search" autocomplete="off"
+               data-i18n-placeholder="messages.search_member_placeholder" />
+      </div>
+      <p id="pick-member-count" class="muted" style="font-size:15px;margin:0 0 14px;"></p>
+      <div id="pick-member-list" class="list-stack"></div>
+    </section>
+
+    <section id="thread-view" hidden>
+      <button type="button" class="btn btn-quiet" id="back-btn" style="width:auto;padding:8px 18px;margin-bottom:16px;font-size:var(--font-sm);" data-i18n="common.back"></button>
+      <h2 id="partner-name"></h2>
+      <div class="alert alert-info safety-tip">
+        <span class="alert-icon" aria-hidden="true">&#128737;</span>
+        <div>
+          <strong data-i18n="messages.scam_help_title"></strong>
+          <p data-i18n="messages.scam_help_body" style="margin:4px 0 0;"></p>
+        </div>
+      </div>
+      <div id="thread-messages" style="margin-bottom:18px;"></div>
+      <div class="card card-plain">
+        <div class="field">
+          <label for="msg-body" class="sr-only" data-i18n="messages.send_placeholder"></label>
+          <textarea id="msg-body" maxlength="2000" data-i18n-placeholder="messages.send_placeholder"></textarea>
+        </div>
+        <div class="btn-row">
+          <button type="button" class="btn" id="send-btn" data-i18n="messages.send"></button>
+        </div>
+      </div>
+      <div class="moderation-actions">
+        <button type="button" class="btn btn-quiet" id="report-btn" data-i18n="messages.report_user"></button>
+        <button type="button" class="btn btn-quiet btn-danger-quiet" id="block-btn" data-i18n="messages.block_user"></button>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/page/messages.js"></script>
+</body>
+</html>
